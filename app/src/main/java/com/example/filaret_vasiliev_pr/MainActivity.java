@@ -25,6 +25,7 @@ public class MainActivity extends AppCompatActivity {
     private ArrayList<String> listItems;
     private ArrayAdapter<String> adapter;
     private SharedPreferences preferences;
+    private SharedPreferences prefsForPause;
     private int pauseCount = 0;
 
     @Override
@@ -40,6 +41,7 @@ public class MainActivity extends AppCompatActivity {
         ListView listView = findViewById(R.id.listView);
 
         preferences = getSharedPreferences("AppData", MODE_PRIVATE);
+        prefsForPause = getSharedPreferences("PAUSES", MODE_PRIVATE);
         listItems = new ArrayList<>(preferences.getStringSet("list", new HashSet<>()));
         adapter = new ArrayAdapter<>(this, android.R.layout.simple_list_item_1, listItems);
         listView.setAdapter(adapter);
@@ -78,8 +80,10 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onPause() {
         super.onPause();
-        pauseCount++;
-        Toast.makeText(this, "App paused: " + pauseCount, Toast.LENGTH_SHORT).show();
+        int pauses = prefsForPause.getInt("PAUSES", 1);
+        pauses++;
+        Toast.makeText(this, "App paused: " + pauses, Toast.LENGTH_SHORT).show();
+        prefsForPause.edit().putInt("PAUSES", pauses).apply();
     }
 
     private void saveData() {

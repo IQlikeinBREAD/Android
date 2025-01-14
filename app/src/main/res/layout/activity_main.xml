@@ -7,14 +7,13 @@
     >
 
     <EditText
-        android:id="@+id/inputField1"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:autofillHints=""
-        android:hint="@string/pierwsze_s_owo"
-        android:inputType="TODO"
-        android:minHeight="48dp"
-        android:textColorHint="#546E7A" />
+      android:id="@+id/inputField1"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:autofillHints=""
+      android:hint="@string/pierwsze_s_owo"
+      android:minHeight="48dp"
+      android:textColorHint="#546E7A" />
 
     <EditText
         android:id="@+id/inputField2"
@@ -24,23 +23,23 @@
         android:minHeight="48dp" />
 
     <Button
-        android:id="@+id/addButton"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Dodaj do listy"
-        tools:ignore="HardcodedText,VisualLintButtonSize" />
+      android:id="@+id/addButton"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:text="Dodaj do listy"
+      tools:ignore="HardcodedText,VisualLintButtonSize" />
 
     <Button
-        android:id="@+id/openSecondActivityButton"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="@string/otw_rz_drug_aktywno" />
+      android:id="@+id/openSecondActivityButton"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:text="@string/otw_rz_drug_aktywno" />
 
     <Button
-        android:id="@+id/clearListButton"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="@string/wyczy_list" />
+      android:id="@+id/clearListButton"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:text="@string/wyczy_list" />
 
     <ListView
         android:id="@+id/listView"
